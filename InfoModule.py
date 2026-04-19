@@ -113,8 +113,6 @@ musicSelection = {
         "phonk"
     },
 
-    "Artist": "", # user input string
-
     "Energy" : {
         "chill",
         "calm",
@@ -152,6 +150,8 @@ musicSelection = {
         "currently_trending",
         "golden_age"
     },
+
+    "Artist": "", # user input string
 }
 vibeSelection = {
     "happy",
