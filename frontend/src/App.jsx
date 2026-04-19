@@ -23,8 +23,8 @@ function App() {
   if (showHome) {
     return (
         <div className="home-screen">
-          <h1>Home Screen</h1>
-          <p>Your app starts here.</p>
+          <h1>Larper</h1>
+          <p>Your larp starts here.</p>
         </div>
     );
   }
@@ -32,9 +32,9 @@ function App() {
   return (
       <div className="screen">
         <div className={`welcome-box ${animate ? "move-up" : ""}`}>
-          <h1 className="welcome-text">Welcome</h1>
+          <h1 className="welcome-text">Lets Larp</h1>
           <p className={`sub-text ${animate ? "fade-in" : ""}`}>
-            Let’s create your post
+            Let’s larp your post
           </p>
         </div>
       </div>
