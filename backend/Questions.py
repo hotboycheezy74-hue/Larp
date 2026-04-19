@@ -25,7 +25,9 @@ QuestionBranches = {
         # --// First user optionally inputs a photo showcasing their style
         [1] : {
             "Question": "Upload an image showcasing your style!",
-        },
+        }, # --// If user inputs image guess their gender
+
+        # --// If user doesn't input image ask for gender
 
         [2] : {
             "Question": "How would you describe your fashion style & the vibe you would like for your outfit??",
