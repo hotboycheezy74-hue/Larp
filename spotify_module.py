@@ -16,6 +16,7 @@ def search_artist_catalogue(inputdata):
     for track in results["tracks"]["items"]:
         print(track["name"], "-", track["artists"][0]["name"])
 
+
 def search_general_song(inputdata):
     results = sp.search(q=(inputdata['Music']['Genre'] + inputdata['Music']['Era'] + inputdata['Music']['Era'] + (inputdata['Photo Vibe'] or inputdata['Music']['Energy'])), type=["track"], limit=10)
     for track in results["tracks"]["items"]:
