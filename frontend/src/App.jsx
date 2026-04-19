@@ -1,44 +1,67 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [animate, setAnimate] = useState(false);
-  const [showHome, setShowHome] = useState(false);
+    const [imageFile, setImageFile] = useState(null);
+    const [result, setResult] = useState(null);
+    const [error, setError] = useState("");
 
-  useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setAnimate(true);
-    }, 1500);
+    async function handleAnalyze() {
+        if (!imageFile) {
+            setError("Please upload an image first.");
+            return;
+        }
 
-    const timer2 = setTimeout(() => {
-      setShowHome(true);
-    }, 3000);
+        setError("");
+        setResult(null);
 
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
-  }, []);
+        const formData = new FormData();
+        formData.append("image", imageFile);
 
-  if (showHome) {
+        try {
+            const response = await fetch("http://127.0.0.1:8000/analyze-image", {
+                method: "POST",
+                body: formData
+            });
+
+            if (!response.ok) {
+                throw new Error("Upload failed");
+            }
+
+            const data = await response.json();
+            console.log("Backend response:", data);
+            setResult(data);
+        } catch (err) {
+            console.error(err);
+            setError("Failed to send image to backend.");
+        }
+    }
+
     return (
-        <div className="home-screen">
-          <h1>Larper</h1>
-          <p>Your larp starts here.</p>
+        <div className="app-container">
+            <h1>Image Upload Test</h1>
+
+            <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => setImageFile(e.target.files[0])}
+            />
+
+            <button onClick={handleAnalyze}>Send Image</button>
+
+            {error && <p>{error}</p>}
+
+            {result && (
+                <div>
+                    <h2>Backend Result</h2>
+                    <p><strong>Message:</strong> {result.message}</p>
+                    <p><strong>Filename:</strong> {result.filename}</p>
+                    <p><strong>Type:</strong> {result.content_type}</p>
+                    <p><strong>Size:</strong> {result.size_in_bytes} bytes</p>
+                </div>
+            )}
         </div>
     );
-  }
-
-  return (
-      <div className="screen">
-        <div className={`welcome-box ${animate ? "move-up" : ""}`}>
-          <h1 className="welcome-text">Lets Larp</h1>
-          <p className={`sub-text ${animate ? "fade-in" : ""}`}>
-            Let’s larp your post
-          </p>
-        </div>
-      </div>
-  );
 }
 
 export default App;
