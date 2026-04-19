@@ -43,29 +43,6 @@ appearanceSelection = { # Use this for finding a style for someone for an outfit
         "luxury_neutrals"
     },
 
-    "accessories": {
-        "none",
-        "silver_chain",
-        "gold_chain",
-        "watch",
-        "bracelets",
-        "rings",
-        "earrings",
-        "sunglasses",
-        "hat",
-        "beanie",
-        "hood_up",
-        "crossbody_bag",
-        "designer_bag",
-        "belt",
-        "scarf",
-        "necklace_layered",
-        "pearls",
-        "cap",
-        "headphones",
-        "glasses"
-    },
-
     "presentation": {
         "clean",
         "polished",
