@@ -49,7 +49,7 @@ def get_image_vibe():
     response = ai_request(promptstring, formattedimage)
     print(response.output_text)
 
-def get_outfit_style():
+def get_outfit_appearance():
     promptstring = f"Analyze this photo output 1 singular word from each of these 3 lists {InfoModule.appearanceSelection} in this format Style: x, Palette: y, Presentation: z"
     with open("TestImages/LazerTestImage.jpg", "rb") as testImage:
         imagedata = testImage.read(); formattedimage = base64.b64encode(imagedata).decode("utf-8")
@@ -65,9 +65,10 @@ def generate_caption(inputdata):
     Music Energy: {inputdata.Music.Energy}
     Music Era: {inputdata.Music.Era}
     Music Artist: {inputdata.Music.Artist or ""}
-    Appearance Style: {inputdata["Appearance Style"]}
-    Appearance Presentation: {inputdata["Appearance Presentation"]}
-
+    Appearance Style: {inputdata["Photo Appearance"]["Style"]}
+    Appearance Presentation: {inputdata["Photo Appearance"]["Presentation"]}
+    # --// AND THE IMAGE IF INPUTTED
+    
     Requirements:
     - Sound natural and modern
     - No cringe or corny lines

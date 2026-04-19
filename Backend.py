@@ -3,7 +3,6 @@ import spotify_module
 
 # --// Table we'll use to fill in from user input & AI output
 UserInputtedData = {
-    "Gender": "",
     "Music": {
         "Genre": "",
         "Energy": "",
@@ -11,10 +10,9 @@ UserInputtedData = {
         "Artist": "",
     },
     "Vibe": "",
-    "Appearance": {
+    "Photo Vibe": "",
+    "Photo Appearance": {
         "Style" : "",
-        "ColorPalette" : "",
-        "Accessories" : "",
         "Presentation" : "",
     }
 }
