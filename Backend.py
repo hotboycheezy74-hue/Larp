@@ -33,5 +33,5 @@ TestInputData = { # --// For use case of a ready to go IG photo
 
 #calls the main function
 if __name__ == "__main__":
-    openai_Module.backendtest(TestInputData)
+    openai_Module.getimagevibe()
     #main()

@@ -3,7 +3,7 @@ import InfoModule
 import base64
 OpenAI_API = OpenAI()
 
-def getimageinfo():
+def getimagevibe():
     promptstring = f"Analyze this photo output a word that the image matches the closes out of all of these vibes: {InfoModule.vibeSelection}, Don't give any other text other than the exact single word."
     # --// Image should be a part of the inputdata dict
     with open("TestImages/jordancarter.jpg", "rb") as testImage:
