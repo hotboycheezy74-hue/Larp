@@ -78,6 +78,5 @@ def generate_caption(inputdata):
     - Include one with a one-liner
     - Include one with a flex caption
     """
-
     response = ai_request(promptstring, False)
     print(response.output_text)
