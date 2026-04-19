@@ -43,7 +43,7 @@ def ai_request(promptstring, formattedimage):
 def get_image_vibe():
     promptstring = f"Analyze this photo output a word that the image matches the closes out of all of these vibes: {InfoModule.vibeSelection}, Don't give any other text other than the exact single word."
     # --// Image should be a part of the inputdata dict
-    with open("TestImages/jordancarter.jpg", "rb") as testImage:
+    with open("../TestImages/jordancarter.jpg", "rb") as testImage:
         imagedata = testImage.read(); formattedimage = base64.b64encode(imagedata).decode("utf-8")
 
     response = ai_request(promptstring, formattedimage)
@@ -51,7 +51,7 @@ def get_image_vibe():
 
 def get_outfit_style():
     promptstring = f"Analyze this photo output 1 singular word from each of these 3 lists {InfoModule.appearanceSelection} in this format Style: x, Palette: y, Presentation: z"
-    with open("TestImages/LazerTestImage.jpg", "rb") as testImage:
+    with open("../TestImages/LazerTestImage.jpg", "rb") as testImage:
         imagedata = testImage.read(); formattedimage = base64.b64encode(imagedata).decode("utf-8")
 
     response = ai_request(promptstring, formattedimage)
