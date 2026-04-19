@@ -20,6 +20,7 @@ UserInputtedData = {
 
 # --// Test inputs before working on front end
 TestInputData = { # --// For use case of a ready to go IG photo
+    "Photo Vibe": "cool",
     "Music": {
         "Genre": "rap",
         "Energy": "laid_back",
@@ -33,5 +34,5 @@ TestInputData = { # --// For use case of a ready to go IG photo
 
 #calls the main function
 if __name__ == "__main__":
-    openai_Module.getimagevibe()
+    openai_Module.get_outfit_style()
     #main()
